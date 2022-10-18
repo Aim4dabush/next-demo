@@ -1,5 +1,14 @@
+import { Fragment } from "react";
+
+//components
+import ProductsList from "../../components/Products/ProductsList/ProductsList";
+
 const ProductsPage = () => {
-  return <div>Products Page</div>;
+  return (
+    <Fragment>
+      <ProductsList />
+    </Fragment>
+  );
 };
 
 export default ProductsPage;

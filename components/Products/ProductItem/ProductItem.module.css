@@ -1,0 +1,27 @@
+.card {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  width: 25%;
+}
+
+.card img {
+  height: 10em;
+  object-fit: cover;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.details {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
