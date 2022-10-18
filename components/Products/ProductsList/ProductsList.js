@@ -6,7 +6,6 @@ import ProductItem from "../ProductItem/ProductItem";
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../../Redux/thunks/ProductsThunks";
-import { productsActions } from "../../../Redux/slices/ProductsSlice";
 
 //styles
 import styles from "./ProductsList.module.css";
@@ -15,6 +14,7 @@ const ProductsList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
 
+  //get products from thunk
   useEffect(() => {
     dispatch(getProducts());
   }, []);
