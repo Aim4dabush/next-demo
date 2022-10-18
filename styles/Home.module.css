@@ -1,0 +1,35 @@
+.button {
+  background-color: skyblue;
+  border: none;
+  border-radius: 8px;
+  font-family: "Mali", cursive;
+  font-weight: 600;
+  margin-top: 3em;
+  padding: 1em;
+}
+
+.button:hover {
+  background-color: black;
+  color: skyblue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.card {
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: center;
+  width: 35%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
