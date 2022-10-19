@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
 //components
@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../Redux/slices/CartSlice";
 import { productsActions } from "../../Redux/slices/ProductsSlice";
 
 //styles
@@ -13,12 +14,26 @@ import styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
+  const quantity = useRef();
   const router = useRouter();
   const products = useSelector((state) => state.products.products);
   const product = useSelector((state) => state.products.product);
-
   const linkPath = "/products";
-  console.log(product);
+
+  const addCartHandler = () => {
+    const subtotal = product.price * quantity.current.value;
+
+    dispatch(
+      cartActions.setCart({
+        id: product.id,
+        title: product.title,
+        image: product.image,
+        price: product.price,
+        quantity: quantity.current.value,
+        subtotal: subtotal,
+      })
+    );
+  };
 
   useEffect(() => {
     const item = products.find((product) => {
@@ -38,10 +53,21 @@ const ProductDetails = () => {
           <div className={styles.info}>
             <p>{product?.category}</p>
             <p>Rating: {product?.rating.rate}</p>
+          </div>
+          <div className={styles.info}>
             <p>Price: ${product?.price}</p>
+            <div>
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                className={styles.input}
+                type="number"
+                id="quantity"
+                ref={quantity}
+              />
+            </div>
           </div>
           <div className={styles.buttons}>
-            <Button>
+            <Button clickHandler={addCartHandler}>
               <p>Add To Cart</p>
             </Button>
             <Button link={linkPath}>

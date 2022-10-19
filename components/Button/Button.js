@@ -13,7 +13,11 @@ const Button = (props) => {
     );
   }
 
-  return <button className={styles.button}>{props.children}</button>;
+  return (
+    <button className={styles.button} onClick={props.clickHandler}>
+      {props.children}
+    </button>
+  );
 };
 
 export default Button;

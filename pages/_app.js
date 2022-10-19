@@ -1,3 +1,6 @@
+//components
+import Layout from "../components/Layout/Layout";
+
 //redux
 import store from "../Redux/store";
 import { Provider } from "react-redux";
@@ -8,7 +11,9 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

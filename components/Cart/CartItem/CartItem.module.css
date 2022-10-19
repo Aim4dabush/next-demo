@@ -1,0 +1,13 @@
+.card {
+  background-color: white;
+  display: flex;
+  height: 20em;
+  width: 30em;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,6 +1,7 @@
 .buttons {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 1em;
   width: 100%;
 }
 
@@ -28,7 +29,12 @@
 }
 
 .info {
+  align-items: center;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.input {
+  width: 5em;
 }
