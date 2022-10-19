@@ -5,7 +5,7 @@ import ProductsList from "../../components/Products/ProductsList/ProductsList";
 
 //redux
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../../Redux/thunks/ProductsThunks";
+import { getProducts } from "../../Redux/thunks/ProductsThunks";
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
