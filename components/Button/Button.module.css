@@ -1,7 +1,10 @@
 .button {
   background-color: skyblue;
+  border: none;
   border-radius: 8px;
   color: black;
+  cursor: pointer;
+  font-family: "Mali", cursive;
   padding: 0 0.5em;
   text-decoration: none;
 }

@@ -1,11 +1,14 @@
-import { useRouter } from "next/router";
+import { Fragment } from "react";
+
+//components
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
 
 const ProductDetailsPage = () => {
-  const router = useRouter();
-
-  console.log(router.query.productId);
-
-  return <div>Product Detail Page</div>;
+  return (
+    <Fragment>
+      <ProductDetails />
+    </Fragment>
+  );
 };
 
 export default ProductDetailsPage;
