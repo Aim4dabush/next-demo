@@ -1,24 +1,10 @@
-import { useEffect } from "react";
-
 //components
 import ProductItem from "../ProductItem/ProductItem";
-
-//redux
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../../Redux/thunks/ProductsThunks";
 
 //styles
 import styles from "./ProductsList.module.css";
 
-const ProductsList = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.products);
-
-  //get products from thunk
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
-
+const ProductsList = ({ products }) => {
   return (
     <ul className={styles.list}>
       {products &&
