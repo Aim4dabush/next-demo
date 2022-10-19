@@ -1,10 +1,15 @@
 //components
 import ProductItem from "../ProductItem/ProductItem";
 
+//redux
+import { useSelector } from "react-redux";
+
 //styles
 import styles from "./ProductsList.module.css";
 
-const ProductsList = ({ products }) => {
+const ProductsList = () => {
+  const products = useSelector((state) => state.products.products);
+
   return (
     <ul className={styles.list}>
       {products &&

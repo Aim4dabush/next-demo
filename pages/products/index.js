@@ -18,7 +18,7 @@ const ProductsPage = () => {
 
   return (
     <Fragment>
-      <ProductsList products={products} />
+      <ProductsList />
     </Fragment>
   );
 };
