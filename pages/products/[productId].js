@@ -37,19 +37,19 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export const getStaticPaths = async () => {
-  const products = await getProducts();
+// export const getStaticPaths = async () => {
+//   const products = await getProducts();
 
-  const paths = products.map((product) => ({
-    params: {
-      productId: product.id.toString(),
-    },
-  }));
+//   const paths = products.map((product) => ({
+//     params: {
+//       productId: product.id.toString(),
+//     },
+//   }));
 
-  return {
-    paths: paths,
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths: paths,
+//     fallback: "blocking",
+//   };
+// };
 
 export default ProductDetailsPage;
