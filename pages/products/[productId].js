@@ -8,7 +8,7 @@ import ProductDetails from "../../components/ProductDetails/ProductDetails";
 // import { productsActions } from "../../Redux/slices/ProductsSlice";
 
 //utils
-import { getProductById, getProducts } from "../../utils/utils";
+// import { getProductById, getProducts } from "../../utils/utils";
 
 const ProductDetailsPage = () => {
   // const dispatch = useDispatch();

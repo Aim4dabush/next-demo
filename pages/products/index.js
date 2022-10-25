@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from "react";
 
 //components
+import Head from "next/head";
 import ProductsList from "../../components/Products/ProductsList/ProductsList";
 
 //redux
@@ -22,6 +23,13 @@ const ProductsPage = ({ products }) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>Products</title>
+        <meta
+          name="description"
+          content="find all the products for the store"
+        />
+      </Head>
       <ProductsList />
     </Fragment>
   );
