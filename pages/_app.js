@@ -1,4 +1,6 @@
 //components
+import CheckoutModal from "../components/Modal/CheckoutModal/CheckoutModal";
+import DetailsModal from "../components/Modal/DetailsModal/DetailsModal";
 import Head from "next/head";
 import Layout from "../components/Layout/Layout";
 
@@ -21,6 +23,8 @@ function MyApp({ Component, pageProps }) {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
+        <CheckoutModal />
+        <DetailsModal />
         <Component {...pageProps} />
       </Layout>
     </Provider>

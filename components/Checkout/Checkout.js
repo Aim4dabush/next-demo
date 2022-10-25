@@ -4,12 +4,15 @@ import { useRef } from "react";
 import Button from "../Button/Button";
 
 //redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { notificationActions } from "../../Redux/slices/NotificationSlice";
+import { orderActions } from "../../Redux/slices/OrderSlice";
 
 //styles
 import styles from "./Checkout.module.css";
 
 const Checkout = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const address = useRef();
   const fName = useRef();
@@ -33,6 +36,8 @@ const Checkout = () => {
       total: total,
     };
 
+    dispatch(orderActions.setCustomerOrder(reqBody));
+
     fetch("/api/order", {
       method: "POST",
       body: JSON.stringify(reqBody),
@@ -45,7 +50,12 @@ const Checkout = () => {
       })
       .then((data) => {
         console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+
+    dispatch(notificationActions.setShowCheckoutModal(true));
   };
 
   return (

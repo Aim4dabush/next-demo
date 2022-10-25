@@ -7,6 +7,7 @@ import Button from "../Button/Button";
 //redux
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../Redux/slices/CartSlice";
+import { notificationActions } from "../../Redux/slices/NotificationSlice";
 import { productsActions } from "../../Redux/slices/ProductsSlice";
 
 //styles
@@ -33,6 +34,8 @@ const ProductDetails = () => {
         subtotal: subtotal,
       })
     );
+
+    dispatch(notificationActions.setShowDetailsModal(true));
   };
 
   useEffect(() => {

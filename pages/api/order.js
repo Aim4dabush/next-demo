@@ -1,6 +1,17 @@
 import fs from "fs";
 import path from "path";
 
+const buildPath = () => {
+  return path.join(process.cwd(), "data", "order.json");
+};
+
+const dataExtraction = (path) => {
+  const fileData = fs.readFileSync(path);
+  const data = JSON.parse(fileData);
+
+  return data;
+};
+
 const handler = (req, res) => {
   if (req.method === "POST") {
     const firstName = req.body.fName;
@@ -17,13 +28,16 @@ const handler = (req, res) => {
     };
 
     //store customer order
-    const filePath = path.join(process.cwd(), "data", "order.json");
-    const fileData = fs.readFileSync(filePath);
-    const data = JSON.parse(fileData);
+    const filePath = buildPath();
+    const data = dataExtraction(filePath);
     data.push(customerOrder);
     fs.writeFileSync(filePath, JSON.stringify(data));
 
     res.status(200).json({ message: "Success!", order: customerOrder });
+  } else {
+    const filePath = buildPath();
+    const data = dataExtraction(filePath);
+    res.status(200).json({ order: data });
   }
 };
 

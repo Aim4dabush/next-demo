@@ -8,7 +8,9 @@ const Button = (props) => {
   if (props.link) {
     return (
       <Link href={props.link}>
-        <a className={styles.button}>{props.children}</a>
+        <a className={styles.button} onClick={props.clickHandler}>
+          {props.children}
+        </a>
       </Link>
     );
   }

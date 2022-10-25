@@ -1,0 +1,12 @@
+.container {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 24%;
+  padding: 1em;
+  position: absolute;
+  top: 35%;
+  z-index: 3;
+}
