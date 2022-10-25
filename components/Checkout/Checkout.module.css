@@ -1,0 +1,55 @@
+.button {
+  background-color: skyblue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Mali", cursive;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.control {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  padding: 1em;
+  width: 50%;
+}
+
+.inputAddress {
+  padding: 1em 0.5em;
+  width: 845px;
+}
+
+.inputName {
+  padding: 1em 0.5em;
+  width: 400px;
+}
+
+.names {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  width: 100%;
+}

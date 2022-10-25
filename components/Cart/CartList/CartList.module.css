@@ -1,0 +1,16 @@
+.button {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
