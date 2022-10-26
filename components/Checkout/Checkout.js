@@ -18,9 +18,13 @@ const Checkout = () => {
   const fName = useRef();
   const lName = useRef();
 
-  const total = cart.reduce((a, b) => {
-    return a.subtotal + b.subtotal;
-  });
+  let total = 0;
+
+  if (cart.length > 1) {
+    total = cart.reduce((a, b) => a.subtotal + b.subtotal);
+  } else {
+    total = cart[0].subtotal;
+  }
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
