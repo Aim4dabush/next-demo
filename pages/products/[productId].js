@@ -4,18 +4,18 @@ import { Fragment, useEffect } from "react";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 
 //redux
-// import { useDispatch } from "react-redux";
-// import { productsActions } from "../../Redux/slices/ProductsSlice";
+import { useDispatch } from "react-redux";
+import { productsActions } from "../../Redux/slices/ProductsSlice";
 
 //utils
-// import { getProductById, getProducts } from "../../utils/utils";
+import { getProductById, getProducts } from "../../utils/utils";
 
-const ProductDetailsPage = () => {
-  // const dispatch = useDispatch();
+const ProductDetailsPage = ({ product }) => {
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(productsActions.setProduct(product));
-  // }, []);
+  useEffect(() => {
+    dispatch(productsActions.setProduct(product));
+  }, []);
 
   return (
     <Fragment>
@@ -24,32 +24,32 @@ const ProductDetailsPage = () => {
   );
 };
 
-// export const getStaticProps = async (context) => {
-//   const id = parseInt(context.params.productId);
+export const getStaticProps = async (context) => {
+  const id = parseInt(context.params.productId);
 
-//   const product = await getProductById(id);
+  const product = await getProductById(id);
 
-//   return {
-//     props: {
-//       product: product,
-//     },
-//     revalidate: 30,
-//   };
-// };
+  return {
+    props: {
+      product: product,
+    },
+    revalidate: 30,
+  };
+};
 
-// export const getStaticPaths = async () => {
-//   const products = await getProducts();
+export const getStaticPaths = async () => {
+  const products = await getProducts();
 
-//   const paths = products.map((product) => ({
-//     params: {
-//       productId: product.id.toString(),
-//     },
-//   }));
+  const paths = products.map((product) => ({
+    params: {
+      productId: product.id.toString(),
+    },
+  }));
 
-//   return {
-//     paths: paths,
-//     fallback: "blocking",
-//   };
-// };
+  return {
+    paths: paths,
+    fallback: "blocking",
+  };
+};
 
 export default ProductDetailsPage;
